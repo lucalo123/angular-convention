@@ -7,5 +7,10 @@
     "test": "test"
   },
   "author": "Niclas Pallin",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/lucalo123/angular-convention",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/lucalo123/angular-convention.git"
+  }
 }

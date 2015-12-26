@@ -3,6 +3,10 @@
   "authors": [
     "lucalo123 <pallin1@hotmail.com>"
   ],
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/lucalo123/angular-convention.git"
+  },
   "description": "Angular Conventions, inspired by John Papas Clean Code from Pluralsight.",
   "main": "app.module.js",
   "moduleType": [
