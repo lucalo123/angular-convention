@@ -1,0 +1,11 @@
+{
+  "name": "convention-app",
+  "version": "1.0.0",
+  "description": "Angular Conventions, inspired by John Papas Clean Code from Pluralsight.",
+  "main": "app.module.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Niclas Pallin",
+  "license": "MIT"
+}

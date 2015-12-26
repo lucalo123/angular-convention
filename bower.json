@@ -1,0 +1,24 @@
+{
+  "name": "convention-app",
+  "authors": [
+    "lucalo123 <pallin1@hotmail.com>"
+  ],
+  "description": "Angular Conventions, inspired by John Papas Clean Code from Pluralsight.",
+  "main": "app.module.js",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}
