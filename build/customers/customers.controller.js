@@ -1,0 +1,1 @@
+!function(){"use strict";function t(){var t=this;t.customers=["Olle","Kalle","Bertil"]}angular.module("app.customers").controller("Customers",t)}();
