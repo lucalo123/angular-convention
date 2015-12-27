@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    var Customers = function ($http) {
+    var Customers = function () {
         var vm = this;
 
         vm.customers = [
@@ -9,7 +9,6 @@
             'Bertil'
         ];
     };
-    Customers.$inject = ['$http'];
     angular.module('app.customers')
         .controller('Customers', Customers);
 })();

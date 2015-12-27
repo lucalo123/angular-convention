@@ -1,1 +1,1 @@
-!function(){"use strict";var t=function(t){var e=this;e.customers=["Olle","Kalle","Bertil"]};t.$inject=["$http"],angular.module("app.customers").controller("Customers",t)}();
+!function(){"use strict";var r=function(){var r=this;r.customers=["Olle","Kalle","Bertil"]};angular.module("app.customers").controller("Customers",r)}();

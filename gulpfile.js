@@ -50,12 +50,8 @@ gulp.task('inject', gulp.series('stage', function () {
         .pipe(gulp.dest(config.build));
 }));
 
-gulp.task('serve-build', gulp.series('hint', 'inject', function () {
-    serve(false);
-}));
-
-gulp.task('serve-dev', gulp.series('hint', 'inject', function () {
-    serve(true);
+gulp.task('serve', gulp.series('hint', 'inject', function () {
+    serve(args.dev);
 }));
 
 gulp.task('watch', function () {
