@@ -21,16 +21,16 @@ gulp.task('compile-sass', function() {
         .pipe(gulp.dest(config.destCss));
 });
 
-gulp.task('stage', function () {
+gulp.task('stage-dev', function () {
     console.log('\t(i)Staging script files.');
     return gulp
         .src(config.jsSource)
         .pipe($.ngAnnotate({ add: true, single_quotes: true }))
         .pipe($.uglify())
-        .pipe(gulp.dest(config.build));
+        .pipe(gulp.dest(config.srcClient));
 });
 
-gulp.task('inject', gulp.series('stage', function () {
+gulp.task('inject', gulp.series('stage-dev', function () {
     console.log('\t(i)Injecting source files into index.html.');
     var wiredep = require('wiredep').stream;
     var inject = require('gulp-inject');

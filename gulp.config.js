@@ -18,6 +18,7 @@ module.exports = function () {
         ],
         index: './src/client/index.html',
         build: './build',
+        srcClient: './src/client',
         sass: client + 'styles/sass/**/*.scss',
         destCss: client + 'styles'
     };
