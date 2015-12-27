@@ -1,1 +1,5 @@
-!function(){"use strict";angular.module("app.customers",[])}();
+(function() {
+    'use strict';
+       
+    angular.module('app.customers', []);
+})();

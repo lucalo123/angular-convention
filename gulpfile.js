@@ -28,7 +28,7 @@ gulp.task('stage', function () {
     return gulp
         .src(config.jsSource)
         .pipe($.ngAnnotate({ add: true, single_quotes: true }))
-        .pipe($.uglify())
+        .pipe($.if(!args.dev, $.uglify()))
         .pipe(gulp.dest(dest));
 });
 

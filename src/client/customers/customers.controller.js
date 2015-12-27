@@ -1,1 +1,15 @@
-!function(){"use strict";var r=function(){var r=this;r.customers=["Olle","Kalle","Bertil"]};angular.module("app.customers").controller("Customers",r)}();
+(function () {
+    'use strict';
+    var Customers = function ($http) {
+        var vm = this;
+
+        vm.customers = [
+            'Olle',
+            'Kalle',
+            'Bertil'
+        ];
+    };
+    Customers.$inject = ['$http'];
+    angular.module('app.customers')
+        .controller('Customers', Customers);
+})();
