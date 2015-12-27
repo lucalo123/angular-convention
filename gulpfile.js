@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var args = require('yargs').argv;
 var $ = require('gulp-load-plugins')({ lazy: true });
 
 var config = require('./gulp.config.js')();
@@ -21,16 +22,17 @@ gulp.task('compile-sass', function() {
         .pipe(gulp.dest(config.destCss));
 });
 
-gulp.task('stage-dev', function () {
+gulp.task('stage', function () {
     console.log('\t(i)Staging script files.');
+    var dest = args.dev ? config.srcClient : config.build;
     return gulp
         .src(config.jsSource)
         .pipe($.ngAnnotate({ add: true, single_quotes: true }))
         .pipe($.uglify())
-        .pipe(gulp.dest(config.srcClient));
+        .pipe(gulp.dest(dest));
 });
 
-gulp.task('inject', gulp.series('stage-dev', function () {
+gulp.task('inject', gulp.series('stage', function () {
     console.log('\t(i)Injecting source files into index.html.');
     var wiredep = require('wiredep').stream;
     var inject = require('gulp-inject');
