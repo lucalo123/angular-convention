@@ -1,5 +1,6 @@
 (function(){
     'use strict';
+    var clientApp = './src/client/app/';
     angular
         .module('app', [
         'ngRoute',
@@ -11,7 +12,7 @@
     .config(function($routeProvider) {
         $routeProvider
             .when('/customers', {
-                templateUrl: '/customers/customers.html',
+                templateUrl: clientApp + 'customers/customers.html',
                 controller: 'Customers',
                 controllerAs: 'cust'
             });

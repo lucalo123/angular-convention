@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    function Customers() {
+    var Customers = function() {
         var vm = this;
         
         vm.customers = [
