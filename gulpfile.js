@@ -13,11 +13,11 @@ gulp.task('hint', function () {
 });
 
 gulp.task('compile-sass', function() {
-    console.log('-t(i)Compiling sass.');
-    
+    console.log('\t(i)Compiling sass.');
+        
     return gulp
         .src(config.sass)
-        .pipe($.sass()
+        .pipe($.sass({outputStyle: 'compressed'})
             .on('error', $.sass.logError))
         .pipe(gulp.dest(config.destCss));
 });
