@@ -45,25 +45,20 @@
     </div>
     <div class="container">
         <div class="jumbotron">
-            <div class="light-orange">
-                Angular app
-            </div>
             <div ng-view></div>
         </div>
     </div>
-
     <!-- bower:js -->
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-route/angular-route.js"></script>
     <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
-
     <!-- inject:js -->
     <script src="/src/client/app/app.module.js"></script>
     <script src="/src/client/app/core/core.module.js"></script>
-    <script src="/src/client/app/customers/customers.module.js"></script>
-    <script src="/src/client/app/widgets/widgets.module.js"></script>
     <script src="/src/client/app/layout/layout.module.js"></script>
+    <script src="/src/client/app/widgets/widgets.module.js"></script>
+    <script src="/src/client/app/contact/contact.controller.js"></script>
     <script src="/src/client/app/customers/customers.controller.js"></script>
     <!-- endinject -->
 </body>

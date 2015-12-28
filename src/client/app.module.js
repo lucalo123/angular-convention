@@ -6,6 +6,7 @@
         'ngRoute',
         'ui.bootstrap',
         'app.core',
+        'app.widgets',
         'app.layout',
         'app.customers'
     ])

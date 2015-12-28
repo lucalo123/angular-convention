@@ -12,19 +12,19 @@ gulp.task('hint', function () {
         .pipe($.jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('compile-sass', function() {
+gulp.task('compile-sass', function () {
     console.log('\t(i)Compiling sass.');
-        
+
     return gulp
         .src(config.sass)
-        .pipe($.sass({outputStyle: 'compressed'})
+        .pipe($.sass({ outputStyle: 'compressed' })
             .on('error', $.sass.logError))
         .pipe(gulp.dest(config.destCss));
 });
 
 gulp.task('stage', function () {
     console.log('\t(i)Staging script files.');
-    var dest = args.dev ? config.srcClient : config.build;
+    var dest = args.dev ? config.srcApp : config.build;
     return gulp
         .src(config.jsSource)
         .pipe($.ngAnnotate({ add: true, single_quotes: true }))
@@ -42,12 +42,12 @@ gulp.task('inject', gulp.series('stage', function () {
         directory: './bower_components/',
         ignorePath: '../..'
     };
-
+    var dest = args.dev ? config.srcClient : config.build;
     return gulp
-        .src(config.index)
+        .src(config.indexSrc)
         .pipe(inject(injectSrc))
         .pipe(wiredep(options))
-        .pipe(gulp.dest(config.build));
+        .pipe(gulp.dest(dest));
 }));
 
 gulp.task('serve', gulp.series('hint', 'inject', function () {

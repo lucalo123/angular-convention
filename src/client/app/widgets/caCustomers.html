@@ -1,0 +1,10 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" ng-click="cw.collapse()">
+        Customers
+    </div>
+    <div class="panel-body" ng-hide="cw.isCollapsed">
+        <ul ng-repeat="customer in cust.customers">
+            <li>{{customer}}</li>
+        </ul>
+    </div>
+</div>

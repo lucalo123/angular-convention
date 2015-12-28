@@ -16,9 +16,10 @@ module.exports = function () {
             './src/client/app/**/*.js',
             './src/client/styles/*.css'
         ],
-        index: './src/client/index.html',
         build: './build',
+        indexSrc: './src/client/index.html',
         srcClient: './src/client',
+        srcApp: './src/client/app',
         sass: client + 'styles/sass/**/*.scss',
         destCss: client + 'styles'
     };
