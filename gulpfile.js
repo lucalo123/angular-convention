@@ -36,7 +36,10 @@ gulp.task('inject', gulp.series('stage', function () {
     console.log('\t(i)Injecting source files into index.html.');
     var wiredep = require('wiredep').stream;
     var inject = require('gulp-inject');
-    var injectSrc = gulp.src(config.injectSource, { read: false });
+    var injectOptions = args.dev ? {} : {
+        ignorePath: '/src/client/app'
+    };
+    var injectSrc = gulp.src(config.injectSource, {read: false});
     var options = {
         json: require('./bower.json'),
         directory: './bower_components/',
@@ -45,7 +48,7 @@ gulp.task('inject', gulp.series('stage', function () {
     var dest = args.dev ? config.srcClient : config.build;
     return gulp
         .src(config.indexSrc)
-        .pipe(inject(injectSrc))
+        .pipe(inject(injectSrc, injectOptions))
         .pipe(wiredep(options))
         .pipe(gulp.dest(dest));
 }));
