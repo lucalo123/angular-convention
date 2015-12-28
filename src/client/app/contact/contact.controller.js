@@ -1,9 +1,9 @@
 (function () {
     'use strict';
-    var Customers = function () {
+    var Contact = function () {
         var vm = this;
         vm.text = 'TODO';
     };
     angular.module('app.contact', [])
-        .controller('Contact', Customers);
+        .controller('Contact', Contact);
 })();

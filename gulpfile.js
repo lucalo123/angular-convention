@@ -12,6 +12,13 @@ gulp.task('hint', function () {
         .pipe($.jshint.reporter('jshint-stylish'));
 });
 
+gulp.task('fonts', function() {
+    console.log('\t(i)Copying fonts');
+    return gulp
+        .src(config.fonts)
+        .pipe(gulp.dest(config.buildStatic + 'fonts')); 
+});
+
 gulp.task('compile-sass', function () {
     console.log('\t(i)Compiling sass.');
 
