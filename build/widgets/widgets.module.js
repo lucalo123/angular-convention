@@ -1,0 +1,1 @@
+!function(){"use strict";var t="./src/client/app/widgets/";angular.module("app.widgets",[]).directive("caCustomers",function(){return{templateUrl:t+"caCustomers.html",restrict:"E",controller:function(){var t=this;t.isCollapsed=!1,t.collapse=function(){t.isCollapsed=!t.isCollapsed}},controllerAs:"cw"}})}();

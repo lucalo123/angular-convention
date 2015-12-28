@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title>Angular app</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Angular conventions app">
+    <meta name="keywords" content="Angular,Conventions,Pluralsight">
+    <meta name="author" content="Niclas Pallin">
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/src/client/static/css/main.css">
+    <!-- endinject -->
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Angular app</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#/customers">Customers</a></li>
+                        <li><a href="#/contact">Contact</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#/login">Login</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+    </div>
+    <div class="container">
+        <div class="jumbotron">
+            <div ng-view></div>
+        </div>
+    </div>
+    <!-- bower:js -->
+    <script src="/../bower_components/angular/angular.js"></script>
+    <script src="/../bower_components/angular-route/angular-route.js"></script>
+    <script src="/../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="/app.module.js"></script>
+    <script src="/core/core.module.js"></script>
+    <script src="/layout/layout.module.js"></script>
+    <script src="/widgets/widgets.module.js"></script>
+    <script src="/contact/contact.controller.js"></script>
+    <script src="/customers/customers.controller.js"></script>
+    <!-- endinject -->
+</body>
+
+</html>
