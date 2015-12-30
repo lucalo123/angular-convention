@@ -1,1 +1,1 @@
-!function(){"use strict";angular.module("app.layout",[])}();
+!function(){"use strict";angular.module("app.layout",[]).controller("Navbar",["$scope",function(l){l.isCollapsed=!1,l.doCollapse=function(){l.isCollapsed=!l.isCollapsed}}])}();
