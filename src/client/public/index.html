@@ -29,7 +29,7 @@
                     <a class="navbar-brand" href="/">Angular app</a>
                 </div>
                 <div class="navbar-collapse collapse" ng-show="isCollapsed">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav" ng-click="doCollapse()">
                         <li><a href="#/customers">Customers</a></li>
                         <li><a href="#/contact">Contact</a></li>
                     </ul>
@@ -55,8 +55,8 @@
     <!-- inject:js -->
     <script src="/src/client/app/app.module.js"></script>
     <script src="/src/client/app/core/core.module.js"></script>
-    <script src="/src/client/app/widgets/widgets.module.js"></script>
     <script src="/src/client/app/layout/layout.module.js"></script>
+    <script src="/src/client/app/widgets/widgets.module.js"></script>
     <script src="/src/client/app/contact/contact.controller.js"></script>
     <script src="/src/client/app/customers/customers.controller.js"></script>
     <!-- endinject -->
