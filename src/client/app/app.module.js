@@ -13,6 +13,9 @@
     ])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
+            .when('/home', {
+                template: '<h3>Home</h3>'
+            })
             .when('/customers', {
                 templateUrl: clientApp + 'customers/customers.html',
                 controller: 'Customers',
@@ -22,6 +25,7 @@
                 templateUrl: clientApp + 'contact/contact.html',
                 controller: 'Contact',
                 controllerAs: 'cont'
-            });
+            })
+            .otherwise('/home');
     }]);
 })();
