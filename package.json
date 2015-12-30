@@ -4,7 +4,8 @@
   "description": "Angular Conventions, inspired by John Papas Clean Code from Pluralsight.",
   "main": "app.module.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "start": "gulp serve"
   },
   "author": "Niclas Pallin",
   "license": "MIT",
