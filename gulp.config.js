@@ -15,16 +15,18 @@ module.exports = function () {
             srcApp + '/**/*module*.js',
             srcApp + '/**/*controller*.js',
             srcApp + '/**/*.js',
-            client + 'static/css/*.css'
+            client + 'public/css/*.css'
         ],
-        build: './build',
-        indexSrc: srcApp + 'index.html',
+        build: './build/',
+        indexSrc: client + 'public/index.html',
         fonts: client + 'static/fonts/*.*',
-        buildStatic: './build/static/',
+        srcPublic: './src/client/public/',
+        buildPublic: './build/public/',
         srcClient: client,
         srcApp: srcApp,
+        buildApp: './build/app/',
         sass: client + 'sass/**/*.scss',
-        destCss: client + 'static/css/',
+        srcCss: client + 'public/css/'
     };
     return config;
 };

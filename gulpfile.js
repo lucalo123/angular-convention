@@ -12,26 +12,26 @@ gulp.task('hint', function () {
         .pipe($.jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('fonts', function() {
+gulp.task('fonts', function () {
     console.log('\t(i)Copying fonts');
     return gulp
         .src(config.fonts)
-        .pipe(gulp.dest(config.buildStatic + 'fonts')); 
+        .pipe(gulp.dest(config.buildPublic + 'fonts'));
 });
 
 gulp.task('compile-sass', function () {
     console.log('\t(i)Compiling sass.');
-
+    var dest = args.dev ? config.srcCss : config.buildPublic + 'css';
     return gulp
         .src(config.sass)
         .pipe($.sass({ outputStyle: 'compressed' })
             .on('error', $.sass.logError))
-        .pipe(gulp.dest(config.destCss));
+        .pipe(gulp.dest(dest));
 });
 
 gulp.task('stage', function () {
     console.log('\t(i)Staging script files.');
-    var dest = args.dev ? config.srcApp : config.build;
+    var dest = args.dev ? config.srcApp : config.buildApp;
     return gulp
         .src(config.jsSource)
         .pipe($.ngAnnotate({ add: true, single_quotes: true }))
@@ -44,15 +44,15 @@ gulp.task('inject', gulp.series('stage', function () {
     var wiredep = require('wiredep').stream;
     var inject = require('gulp-inject');
     var injectOptions = args.dev ? {} : {
-        ignorePath: '/src/client/app'
+        ignorePath: config.srcApp
     };
-    var injectSrc = gulp.src(config.injectSource, {read: false});
+    var injectSrc = gulp.src(config.injectSource, { read: false });
     var options = {
         json: require('./bower.json'),
         directory: './bower_components/',
         ignorePath: '../..'
     };
-    var dest = args.dev ? config.srcClient : config.build;
+    var dest = args.dev ? config.srcPublic : config.buildPublic;
     return gulp
         .src(config.indexSrc)
         .pipe(inject(injectSrc, injectOptions))
@@ -60,17 +60,11 @@ gulp.task('inject', gulp.series('stage', function () {
         .pipe(gulp.dest(dest));
 }));
 
-gulp.task('serve', gulp.series('hint', 'inject', function () {
-    serve(args.dev);
-}));
-
-gulp.task('watch', function () {
-    return gulp
-        .watch(config.jsSource, gulp.series('hint'))
-        .on('change', function () {
-            console.log('Detected file change.');
-        });
-});
+gulp.task('serve', gulp.series(
+    gulp.parallel('hint', 'inject', 'compile-sass'),
+    function () {
+        serve(args.dev);
+    }));
 
 gulp.task('test', function (done) {
     console.log('Gulp test: simple test was successful.');
@@ -91,14 +85,5 @@ function serve(isDev) {
     return $.nodemon(nodeOptions)
         .on('restart', gulp.series('hint', function () {
             console.log('Nodemon restarted');
-        }))
-        .on('start', function () {
-            console.log('Nodemon started');
-        })
-        .on('crash', function () {
-            console.error('Nodemon crashed');
-        })
-        .on('exit', function () {
-            console.log('Nodemon shutting down');
-        });
+        }));
 }

@@ -1,1 +1,0 @@
-!function(){"use strict";var t=function(){var t=this;t.text="TODO"};angular.module("app.contact",[]).controller("Contact",t)}();
