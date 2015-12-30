@@ -6,11 +6,11 @@ var port = process.env.PORT || 3000;
 var env = process.env.NODE_ENV;
 
 switch (env) {
-    case 'build':
+    case 'production':
         console.log('In build-environment.');
         app.use(express.static('./'));
         app.use(express.static('./build/'));
-        app.use('/*', express.static('./build/index.html'));
+        app.use('/', express.static('./build/index.html'));
         break;
     default:
         console.log('In dev-environment.');

@@ -84,7 +84,7 @@ function serve(isDev) {
         delayTime: 1,
         env: {
             'PORT': config.port,
-            'NODE_ENV': isDev ? 'dev' : 'build'
+            'NODE_ENV': isDev ? 'development' : 'production'
         },
         watch: config.alljs
     };
