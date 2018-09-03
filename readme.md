@@ -1,4 +1,4 @@
-##Angular Conventions
+## Bootstrap App with Angular
 
 ##### Inspired by John Papas course on Pluralsight: AngularJS Patterns: Clean Code.
 
